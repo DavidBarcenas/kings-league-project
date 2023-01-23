@@ -1,0 +1,110 @@
+[
+    {
+        "team": "Saiyans FC",
+        "wins": 3,
+        "loses": 0,
+        "goalsScored": 10,
+        "goalsConceded": 4,
+        "yellowCards": 3,
+        "redCards": 1
+    },
+    {
+        "team": "1K FC",
+        "wins": 3,
+        "loses": 0,
+        "goalsScored": 12,
+        "goalsConceded": 7,
+        "yellowCards": 0,
+        "redCards": 0
+    },
+    {
+        "team": "Kunisports",
+        "wins": 2,
+        "loses": 1,
+        "goalsScored": 5,
+        "goalsConceded": 3,
+        "yellowCards": 2,
+        "redCards": 0
+    },
+    {
+        "team": "Los Troncos FC",
+        "wins": 2,
+        "loses": 1,
+        "goalsScored": 11,
+        "goalsConceded": 10,
+        "yellowCards": 2,
+        "redCards": 0
+    },
+    {
+        "team": "Ultimate Móstoles",
+        "wins": 2,
+        "loses": 1,
+        "goalsScored": 9,
+        "goalsConceded": 8,
+        "yellowCards": 1,
+        "redCards": 0
+    },
+    {
+        "team": "Porcinos FC",
+        "wins": 2,
+        "loses": 1,
+        "goalsScored": 9,
+        "goalsConceded": 9,
+        "yellowCards": 1,
+        "redCards": 0
+    },
+    {
+        "team": "El Barrio",
+        "wins": 1,
+        "loses": 2,
+        "goalsScored": 8,
+        "goalsConceded": 7,
+        "yellowCards": 1,
+        "redCards": 0
+    },
+    {
+        "team": "Rayo de Barcelona",
+        "wins": 1,
+        "loses": 2,
+        "goalsScored": 9,
+        "goalsConceded": 9,
+        "yellowCards": 0,
+        "redCards": 0
+    },
+    {
+        "team": "Aniquiladores FC",
+        "wins": 1,
+        "loses": 2,
+        "goalsScored": 7,
+        "goalsConceded": 9,
+        "yellowCards": 1,
+        "redCards": 0
+    },
+    {
+        "team": "XBUYER TEAM",
+        "wins": 1,
+        "loses": 2,
+        "goalsScored": 5,
+        "goalsConceded": 8,
+        "yellowCards": 3,
+        "redCards": 0
+    },
+    {
+        "team": "Jijantes FC",
+        "wins": 0,
+        "loses": 3,
+        "goalsScored": 7,
+        "goalsConceded": 12,
+        "yellowCards": 2,
+        "redCards": 0
+    },
+    {
+        "team": "PIO FC",
+        "wins": 0,
+        "loses": 3,
+        "goalsScored": 3,
+        "goalsConceded": 9,
+        "yellowCards": 4,
+        "redCards": 0
+    }
+]

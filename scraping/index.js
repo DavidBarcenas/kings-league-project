@@ -1,4 +1,6 @@
 import * as cheerio from 'cheerio'
+import { writeFile } from 'node:fs/promises'
+import path from 'node:path'
 
 const urls = {
   leaderBoard: 'https://kingsleague.pro/estadisticas/clasificacion/'
@@ -37,4 +39,6 @@ async function getLeaderBoard () {
 }
 
 const leaderBoard = await getLeaderBoard()
-console.log(leaderBoard)
+
+const filePath = path.join(process.cwd(), './db/leaderboard.json')
+await writeFile(filePath, JSON.stringify(leaderBoard, null, 4), 'utf-8')
