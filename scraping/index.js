@@ -1,6 +1,9 @@
 import * as cheerio from 'cheerio'
-import { writeFile } from 'node:fs/promises'
+import { writeFile, readFile } from 'node:fs/promises'
 import path from 'node:path'
+
+const dbPath = path.join(process.cwd(), './db')
+const teams = await readFile(`${dbPath}/teams.json`, 'utf-8').then(JSON.parse)
 
 const urls = {
   leaderBoard: 'https://kingsleague.pro/estadisticas/clasificacion/'
@@ -26,19 +29,22 @@ async function getLeaderBoard () {
     redCards: { selector: '.fs-table-text_9', typeOf: 'number' }
   }
 
+  const getTeam = ({ name }) => teams.find(team => team.name === name)
+
   $rows.each((i, el) => {
     const leaderBoardEntries = Object.entries(leaderBoardSelectors).map(([key, { selector, typeOf }]) => {
       const rowValue = $(el).find(selector).text().trim()
       const value = typeOf === 'number' ? Number(rowValue) : rowValue
       return [key, value]
     })
-    leaderBoard.push(Object.fromEntries(leaderBoardEntries))
+
+    const { team: teamName, ...leaderBoardTeam } = Object.fromEntries(leaderBoardEntries)
+    const team = getTeam({ name: teamName })
+    leaderBoard.push({ team, ...leaderBoardTeam })
   })
 
   return leaderBoard
 }
 
 const leaderBoard = await getLeaderBoard()
-
-const filePath = path.join(process.cwd(), './db/leaderboard.json')
-await writeFile(filePath, JSON.stringify(leaderBoard, null, 4), 'utf-8')
+await writeFile(`${dbPath}/leaderboard.json`, JSON.stringify(leaderBoard, null, 4), 'utf-8')
