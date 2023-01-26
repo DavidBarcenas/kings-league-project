@@ -1,5 +1,5 @@
 import * as cheerio from 'cheerio'
-import { presidents, teams, writeDBFile } from '../db'
+import { presidents, teams, writeDBFile } from '../db/index.js'
 
 const urls = {
   leaderBoard: 'https://kingsleague.pro/estadisticas/clasificacion/'
