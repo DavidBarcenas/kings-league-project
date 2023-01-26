@@ -26,7 +26,8 @@ jobs:
           run_install: true
       - run: 
           node scraping/leaderboard.js
-          git config user.name kings-league-bot
+          git config --global user.email "davidbarcenasmx@gmail.com"
+          git config --global user.name "David Barcenas"
           git add -A
-          git commit -m "[bot] update database"
+          git commit -m "update leaderboard database"
           git push origin main
