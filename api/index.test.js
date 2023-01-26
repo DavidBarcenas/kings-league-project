@@ -1,11 +1,11 @@
-import { unstable_dev } from 'wrangler'
+import { unstable_dev as unstableDev } from 'wrangler'
 import { describe, expect, it, beforeAll, afterAll } from 'vitest'
 
 describe('Worker', () => {
   let worker
 
   beforeAll(async () => {
-    worker = await unstable_dev('src/index.js', {
+    worker = await unstableDev('src/index.js', {
       experimental: { disableExperimentalWarning: true }
     })
   })

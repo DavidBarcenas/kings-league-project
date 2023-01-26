@@ -3,10 +3,13 @@ import path from 'node:path'
 
 const staticsPath = path.join(process.cwd(), './assets/static/presidents')
 const dbPath = path.join(process.cwd(), '../db/')
-const rawPresidents = await readFile(`${dbPath}/raw-presidents.json`, 'utf-8').then(JSON.parse)
+const rawPresidents = await readFile(
+  `${dbPath}/raw-presidents.json`,
+  'utf-8'
+).then(JSON.parse)
 
 const presidents = await Promise.all(
-  rawPresidents.map(async presidentInfo => {
+  rawPresidents.map(async (presidentInfo) => {
     const { slug: id, title, _links: links } = presidentInfo
     const { rendered: name } = title
 
@@ -16,7 +19,9 @@ const presidents = await Promise.all(
     const responseImageEndpoint = await fetch(imageApiEndpoint)
     const data = await responseImageEndpoint.json()
     const [imageInfo] = data
-    const { guid: { rendered: imageUrl } } = imageInfo
+    const {
+      guid: { rendered: imageUrl }
+    } = imageInfo
 
     const fileExtension = imageUrl.split('.').at(-1)
 
@@ -31,4 +36,7 @@ const presidents = await Promise.all(
   })
 )
 
-await writeFile(`${dbPath}/presidents.json`, JSON.stringify(presidents, null, 2))
+await writeFile(
+  `${dbPath}/presidents.json`,
+  JSON.stringify(presidents, null, 2)
+)

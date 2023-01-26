@@ -5,13 +5,13 @@ const urls = {
   leaderBoard: 'https://kingsleague.pro/estadisticas/clasificacion/'
 }
 
-async function scrape (url) {
+async function scrape(url) {
   const res = await fetch(url)
   const html = await res.text()
   return cheerio.load(html)
 }
 
-async function getLeaderBoard () {
+async function getLeaderBoard() {
   const $ = await scrape(urls.leaderBoard)
   const $rows = $('table tbody tr')
   const leaderBoard = []
@@ -26,19 +26,24 @@ async function getLeaderBoard () {
   }
 
   const getTeam = ({ name }) => {
-    const { presidentId, ...restOfTeam } = teams.find(team => team.name === name)
-    const president = presidents.find(preident => preident.id === presidentId)
+    const { presidentId, ...restOfTeam } = teams.find(
+      (team) => team.name === name
+    )
+    const president = presidents.find((preident) => preident.id === presidentId)
     return { ...restOfTeam, president }
   }
 
   $rows.each((i, el) => {
-    const leaderBoardEntries = Object.entries(leaderBoardSelectors).map(([key, { selector, typeOf }]) => {
-      const rowValue = $(el).find(selector).text().trim()
-      const value = typeOf === 'number' ? Number(rowValue) : rowValue
-      return [key, value]
-    })
+    const leaderBoardEntries = Object.entries(leaderBoardSelectors).map(
+      ([key, { selector, typeOf }]) => {
+        const rowValue = $(el).find(selector).text().trim()
+        const value = typeOf === 'number' ? Number(rowValue) : rowValue
+        return [key, value]
+      }
+    )
 
-    const { team: teamName, ...leaderBoardTeam } = Object.fromEntries(leaderBoardEntries)
+    const { team: teamName, ...leaderBoardTeam } =
+      Object.fromEntries(leaderBoardEntries)
     const team = getTeam({ name: teamName })
     leaderBoard.push({ team, ...leaderBoardTeam })
   })
