@@ -34,6 +34,12 @@ app.get('/presidents/:id', (c) => {
     ? c.json(president)
     : c.json({ message: 'President not found' }, 404)
 })
+app.get('/teams/:id', c => {
+  const id = c.req.param('id')
+  const team = teams.find(team => team.id === id)
+
+  return team ? c.json(team) : c.json({ message: 'Team not found' }, 404)
+})
 app.get('/static/*', serveStatic({ root: './' }))
 
 export default app
