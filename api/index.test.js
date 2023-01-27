@@ -5,7 +5,7 @@ describe('Worker', () => {
   let worker
 
   beforeAll(async () => {
-    worker = await unstableDev('src/index.js', {
+    worker = await unstableDev('api/index.js', {
       experimental: { disableExperimentalWarning: true }
     })
   })
@@ -14,11 +14,14 @@ describe('Worker', () => {
     await worker.stop()
   })
 
-  it('should return Hello World', async () => {
+  it('routes should have endpoint and description', async () => {
     const resp = await worker.fetch()
     if (resp) {
-      const text = await resp.text()
-      expect(text).toMatchInlineSnapshot('"Hello World!"')
+      const apiRoutes = await resp.json()
+      apiRoutes.forEach(endpoint => {
+        expect(endpoint).toHaveProperty('endpoint')
+        expect(endpoint).toHaveProperty('description')
+      })
     }
   })
 })
