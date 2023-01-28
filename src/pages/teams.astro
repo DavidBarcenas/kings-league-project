@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const res = await fetch('https://kings-league-api.daveeb.workers.dev/teams')
+const teams = await res.json()
+---
+
+<Layout title='Teams'>
+  <div class='container m-auto'>
+    <header class='flex'>
+      {
+        teams.map(({ id, image, name }) => (
+          <a href={`/team/${id}`}>
+            <img class='aspect-square w-12' src={image} alt={name} />
+          </a>
+        ))
+      }
+    </header>
+    <main>
+      <h1>Teams</h1>
+    </main>
+  </div>
+</Layout>
