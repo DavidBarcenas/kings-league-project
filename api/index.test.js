@@ -18,7 +18,7 @@ describe('Worker', () => {
     const resp = await worker.fetch()
     if (resp) {
       const apiRoutes = await resp.json()
-      apiRoutes.forEach(endpoint => {
+      apiRoutes.forEach((endpoint) => {
         expect(endpoint).toHaveProperty('endpoint')
         expect(endpoint).toHaveProperty('description')
       })

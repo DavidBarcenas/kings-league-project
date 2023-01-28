@@ -26,9 +26,7 @@ async function getLeaderBoard() {
   }
 
   const getTeam = ({ name }) => {
-    const { presidentId, ...restOfTeam } = teams.find(
-      (team) => team.name === name
-    )
+    const { presidentId, ...restOfTeam } = teams.find((team) => team.name === name)
     const president = presidents.find((preident) => preident.id === presidentId)
     return { ...restOfTeam, president }
   }
@@ -42,8 +40,7 @@ async function getLeaderBoard() {
       }
     )
 
-    const { team: teamName, ...leaderBoardTeam } =
-      Object.fromEntries(leaderBoardEntries)
+    const { team: teamName, ...leaderBoardTeam } = Object.fromEntries(leaderBoardEntries)
     const team = getTeam({ name: teamName })
     leaderBoard.push({ team, ...leaderBoardTeam })
   })

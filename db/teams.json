@@ -3,7 +3,7 @@
     "id": "1k",
     "color": "#6f68f4",
     "name": "1K FC",
-    "image": "https://kings-league-api.daveeb.workers.dev/logos/1k.svg",
+    "image": "https://kingsleague.dev/teams/logos/1k.svg",
     "imageWhite": "https://kingsleague.dev/teams/logos/1k-inverse.svg",
     "url": "https://kingsleague.pro/team/1k/",
     "presidentId": "iker-casillas",
@@ -1317,10 +1317,7 @@
     "url": "https://kingsleague.pro/team/porcinos-fc/",
     "presidentId": "ibai-llanos",
     "channel": "https://twitch.tv/ibai",
-    "socialNetworks": [
-      "https://www.twitch.tv/ibai",
-      "https://twitter.com/FCPorcinos"
-    ],
+    "socialNetworks": ["https://www.twitch.tv/ibai", "https://twitter.com/FCPorcinos"],
     "players": [
       {
         "id": "porcinos-fc-4",
@@ -2059,10 +2056,7 @@
     "url": "https://kingsleague.pro/team/pio-fc/",
     "presidentId": "rivers",
     "channel": "https://twitch.tv/rivers_gg",
-    "socialNetworks": [
-      "https://www.twitch.tv/rivers_gg",
-      "https://twitter.com/PIO_FC"
-    ],
+    "socialNetworks": ["https://www.twitch.tv/rivers_gg", "https://twitter.com/PIO_FC"],
     "players": [
       {
         "id": "pio-fc-4",
