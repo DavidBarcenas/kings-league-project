@@ -1,15 +1,5 @@
-import * as cheerio from 'cheerio'
 import { teams, writeDBFile } from '../db/index.js'
-
-const urls = {
-  mvp: 'https://kingsleague.pro/estadisticas/mvp/'
-}
-
-async function scrape(url) {
-  const res = await fetch(url)
-  const html = await res.text()
-  return cheerio.load(html)
-}
+import { scrape, urls } from './utils.js'
 
 const mvpSelectors = {
   rank: { selector: '.fs-table-text_1', typeOf: 'number' },

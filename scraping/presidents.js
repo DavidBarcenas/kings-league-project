@@ -1,4 +1,5 @@
-import { writeFile, readFile } from 'node:fs/promises'
+import { writeDBFile } from '../db/index.js'
+import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 
 const staticsPath = path.join(process.cwd(), './assets/static/presidents')
@@ -27,10 +28,10 @@ const presidents = await Promise.all(
     const buffer = Buffer.from(arrayBuffer)
 
     const imageFileName = `${id}.${fileExtension}`
-    await writeFile(`${staticsPath}/${imageFileName}`, buffer)
+    await writeDBFile(`${staticsPath}/${imageFileName}`, buffer)
 
     return { id, name, image: imageFileName, teamId: 0 }
   })
 )
 
-await writeFile(`${dbPath}/presidents.json`, JSON.stringify(presidents, null, 2))
+await writeDBFile('presidents', presidents)

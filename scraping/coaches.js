@@ -1,20 +1,10 @@
-import * as cheerio from 'cheerio'
 import { writeDBFile, teams } from '../db/index.js'
+import { scrape, urls } from './utils.js'
 
 const coachesSelectors = {
   teamName: { selector: '.name.mt10', typeOf: 'string' },
   coach: { selector: '.name.mt20', typeOf: 'string' },
   coachImg: { selector: '.player-circle-box', typeOf: 'string' }
-}
-
-const urls = {
-  coaches: 'https://es.besoccer.com/competicion/info/kings-league/2023'
-}
-
-async function scrape(url) {
-  const res = await fetch(url)
-  const html = await res.text()
-  return cheerio.load(html)
 }
 
 async function getCoaches() {
