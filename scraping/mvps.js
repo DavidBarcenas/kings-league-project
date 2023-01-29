@@ -1,5 +1,4 @@
-import { teams, writeDBFile } from '../db/index.js'
-import { scrape, urls } from './utils.js'
+import { teams } from '../db/index.js'
 
 const mvpSelectors = {
   rank: { selector: '.fs-table-text_1', typeOf: 'number' },
@@ -8,18 +7,18 @@ const mvpSelectors = {
   gamesPlayed: { selector: '.fs-table-text_5', typeOf: 'number' },
   mvps: { selector: '.fs-table-text_6', typeOf: 'number' }
 }
-const getImageFromTeam = ({ name }) => {
-  const { image } = teams.find((team) => team.name === name)
-  return image
-}
 
-async function getMVPS() {
-  const $ = await scrape(urls.mvp)
+export async function getMVPS($) {
   const $rows = $('table tbody tr')
   const mvpSelectorEntries = Object.entries(mvpSelectors)
   const mvpList = []
 
-  $rows.each((_, el) => {
+  const getImageFromTeam = ({ name }) => {
+    const { image } = teams.find((team) => team.name === name)
+    return image
+  }
+
+  $rows.each((i, el) => {
     const mvpEntries = mvpSelectorEntries.map(([key, { selector, typeOf }]) => {
       const rowValue = $(el).find(selector).text().trim()
       const value = typeOf === 'number' ? Number(rowValue) : rowValue
@@ -31,12 +30,10 @@ async function getMVPS() {
     mvpList.push({
       ...mvp,
       team: teamName,
-      image
+      image,
+      rank: i + 1
     })
   })
 
   return mvpList
 }
-
-const mvpList = await getMVPS()
-await writeDBFile('mvps', mvpList)
