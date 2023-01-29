@@ -39,5 +39,14 @@ app.get('/teams/:id', (c) => {
   return team ? c.json(team) : c.json({ message: 'Team not found' }, 404)
 })
 app.get('/static/*', serveStatic({ root: './' }))
+app.notFound((c) => {
+  const { pathname } = new URL(c.req.url)
+
+  if (c.req.url.at(-1) === '/') {
+    return c.redirect(pathname.slice(0, -1))
+  }
+
+  return c.json({ message: 'Not found' }, 404)
+})
 
 export default app
