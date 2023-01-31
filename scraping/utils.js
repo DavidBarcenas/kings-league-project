@@ -14,8 +14,8 @@ export const scrapings = {
     scraper: getMVPS
   }
   // coachs: {
-  // 	url: 'https://es.besoccer.com/competicion/info/kings-league/2023',
-  // 	scraper: getCoaches
+  // url: 'https://es.besoccer.com/competicion/info/kings-league/2023',
+  // scraper: getCoaches
   // }
 }
 
