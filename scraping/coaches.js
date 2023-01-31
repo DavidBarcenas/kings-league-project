@@ -1,15 +1,10 @@
-import { writeDBFile, teams } from '../db/index.js'
-import { scrape, urls } from './utils.js'
-
 const coachesSelectors = {
   teamName: { selector: '.name.mt10', typeOf: 'string' },
   coach: { selector: '.name.mt20', typeOf: 'string' },
   coachImg: { selector: '.player-circle-box', typeOf: 'string' }
 }
 
-async function getCoaches() {
-  const $ = await scrape(urls.coaches)
-
+export async function getCoaches($) {
   const coachNames = $(coachesSelectors.coach.selector)
     .toArray()
     .map((name) => name.children[0].data)
@@ -34,25 +29,5 @@ async function getCoaches() {
     }
   })
 
-  return teams.map((team) => {
-    const coachInfoTeam = teamsWithCoach.filter(({ teamName }) => {
-      return (
-        teamName.replace(' FC', '').toLocaleUpperCase() ===
-        team.name.replace(' FC', '').toLocaleUpperCase()
-      )
-    })[0]
-
-    console.log(coachInfoTeam)
-
-    return {
-      ...team,
-      coachInfo: {
-        name: coachInfoTeam.name,
-        image: coachInfoTeam.image
-      }
-    }
-  })
+  return teamsWithCoach
 }
-
-const teamsWithCoach = await getCoaches()
-writeDBFile('teams', teamsWithCoach)
