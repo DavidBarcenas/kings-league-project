@@ -8,7 +8,7 @@ const mvpSelectors = {
   mvps: { selector: '.fs-table-text_6', typeOf: 'number' }
 }
 
-export async function getMVPS($) {
+export async function getMVP($) {
   const $rows = $('table tbody tr')
   const mvpSelectorEntries = Object.entries(mvpSelectors)
   const mvpList = []
