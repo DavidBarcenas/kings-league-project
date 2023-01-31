@@ -2,13 +2,13 @@ name: Scrape Kings League Website
 
 on:
   workflow_dispatch:
-  
+
   repository_dispatch:
     types:
       - webhook
-  
+
   schedule:
-    - cron: "0 */1 * * 0"
+    - cron: '0 */1 * * 0'
 
 jobs:
   build:
@@ -23,7 +23,7 @@ jobs:
           version: 7.25.1
           run_install: true
       - run: |
-          node scraping/leaderboard.js
+          npm run scrape
           git config --global user.email "davidbarcenasmx@gmail.com"
           git config --global user.name "David Barcenas"
           git add -A
