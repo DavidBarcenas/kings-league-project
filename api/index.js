@@ -3,6 +3,9 @@ import { serveStatic } from 'hono/serve-static.module'
 import leaderboard from '../db/leaderboard.json'
 import teams from '../db/teams.json'
 import presidents from '../db/presidents.json'
+import topScorer from '../db/top_scorer.json'
+import mvp from '../db/mvp.json'
+import assists from '../db/assists.json'
 
 const app = new Hono()
 
@@ -25,6 +28,9 @@ app.get('/', (c) =>
 
 app.get('/leaderboard', (c) => c.json(leaderboard))
 app.get('/teams', (c) => c.json(teams))
+app.get('/top-scorer', (c) => c.json(topScorer))
+app.get('/mvp', (c) => c.json(mvp))
+app.get('/assists', (c) => c.json(assists))
 app.get('/presidents', (c) => c.json(presidents))
 app.get('/presidents/:id', (c) => {
   const id = c.req.param('id')
