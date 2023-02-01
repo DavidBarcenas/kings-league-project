@@ -8,7 +8,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-22.04
-    name: Execute tests
+    name: Tests
+    if: github.ref_name == 'main'
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -23,7 +24,7 @@ jobs:
   deploy:
     needs: test
     runs-on: ubuntu-22.04
-    name: Deploy API to Cloudflare Workers
+    name: Deploy API
     if: ${{github.event.pull_request.head.repo.full_name == github.repository}} # Only deploy if the push is from the main repo
     steps:
       - uses: actions/checkout@v3
@@ -36,5 +37,5 @@ jobs:
           run_install: true
       - uses: cloudflare/wrangler-action@2.0.0
         with:
-          apiToken: ${{ secrets. CF_API_TOKEN}}
+          apiToken: ${{ secrets.CF_API_TOKEN}}
           workingDirectory: api
