@@ -30,7 +30,9 @@
     "tailwindcss": "^3.0.24"
   },
   "devDependencies": {
+    "@typescript-eslint/parser": "5.48.0",
     "@vitest/coverage-c8": "0.26.3",
+    "eslint-config-standard": "17.0.0",
     "eslint-plugin-astro": "0.23.0",
     "prettier": "2.8.3",
     "prettier-plugin-astro": "0.8.0",
@@ -38,22 +40,5 @@
     "vite": "4.0.4",
     "vitest": "0.27.3",
     "wrangler": "2.8.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "standard",
-      "plugin:astro/recommended"
-    ],
-    "rules": {
-      "space-before-function-paren": "off"
-    },
-    "overrides": [
-      {
-        "files": [
-          "*.astro"
-        ],
-        "parser": "astro-eslint-parser"
-      }
-    ]
   }
 }
