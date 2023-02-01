@@ -13,3 +13,8 @@ export const presidents = await readDBFile('presidents')
 export function writeDBFile(dbName, data) {
   return writeFile(`${dbPath}/${dbName}.json`, JSON.stringify(data, null, 4), 'utf-8')
 }
+
+export function getImageFromTeam({ name }) {
+  const { image } = teams.find((team) => team.name === name)
+  return image
+}
