@@ -28,10 +28,10 @@ const menu = [
 ]
 ---
 
-<header class='w-screen bg-gradient-to-b from-[#ff6900] via-[#ff6900] to-[#e66000] p-8 gap-x-8'>
+<header class='w-screen bg-gradient-to-b from-[#ff6900] via-[#ff6900] to-[#cd5500] p-8 gap-x-8'>
   <div class='flex flex-col h-full gap-4 w-full'>
     <nav>
-      <ul class='flex justify-center items-center gap-x-4 [&>li>a:hover]:scale-150'>
+      <ul class='flex flex-wrap justify-center items-center gap-x-4 [&>li>a:hover]:scale-150'>
         {
           teams.map(({ id, image, name }, i) => (
             <>
@@ -39,7 +39,7 @@ const menu = [
               <li>
                 <a class='group transition block' href={`/team/${id}`} title={name}>
                   <img
-                    class='group-hover:drop-shadow-[0px_0px_8px_#fff] drop-shadow-[0px_0px_4px_#fff] w-12 h-12'
+                    class='group-hover:drop-shadow-[0px_0px_8px_#fff] drop-shadow-[0px_0px_4px_#fff] w-12 h-12 aspect-square'
                     src={image}
                     alt={`Escudo del equipo ${name}`}
                   />
