@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-22.04
     name: Tests
     if: github.ref_name == 'main'
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -43,6 +44,7 @@ jobs:
     runs-on: ubuntu-22.04
     name: Deploy API
     if: ${{github.event.pull_request.head.repo.full_name == github.repository}} # Only deploy if the push is from the main repo
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
