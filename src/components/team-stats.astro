@@ -1,0 +1,45 @@
+---
+import { findLeaderboardBy } from '@services/leaderboard.js'
+
+const { teamId } = Astro.props
+const { wins, loses, goalsScored, goalsConceded, yellowCards, redCards } =
+  await findLeaderboardBy({ teamId })
+
+const stats = [
+  {
+    title: 'Victorias',
+    value: wins
+  },
+  {
+    title: 'Derrotas',
+    value: loses
+  },
+  {
+    title: 'Goles a favor',
+    value: goalsScored
+  },
+  {
+    title: 'Goles en contra',
+    value: goalsConceded
+  },
+  {
+    title: 'Amarillas',
+    value: yellowCards
+  },
+  {
+    title: 'Rojas',
+    value: redCards
+  }
+]
+---
+
+<section class='bg-black p-4 rounded-lg'>
+  {
+    stats.map((stat) => (
+      <div class='flex justify-between items-center mb-2'>
+        <h4 class='text-yellow-400 uppercase font-bold font-title'>{stat.title}</h4>
+        <strong class='text-4xl font-title text-white font-bold'>{stat.value}</strong>
+      </div>
+    ))
+  }
+</section>
