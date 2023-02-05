@@ -3,6 +3,29 @@ import Logo from './logo.astro'
 
 const response = await fetch('https://kings-league-api.daveeb.workers.dev/teams')
 const teams = await response.json()
+
+const menu = [
+  {
+    name: 'Equipos',
+    href: '/equipos'
+  },
+  {
+    name: 'Calendario',
+    href: '/calendario'
+  },
+  {
+    name: 'Estadísticas',
+    href: '/estadisticas'
+  },
+  {
+    name: 'Contacto',
+    href: '/contacto'
+  },
+  {
+    name: 'Reglamento',
+    href: '/reglamento'
+  }
+]
 ---
 
 <header class='w-screen bg-gradient-to-b from-[#ff6900] via-[#ff6900] to-[#e66000] p-8 gap-x-8'>
@@ -32,21 +55,20 @@ const teams = await response.json()
       <ul
         class='flex justify-center text-white gap-x-4 font-semibold text-md [&>li>a]:opacity-80 [&>li>a:hover]:opacity-100 [&>li>a:hover]:underline'
       >
-        <li>
-          <a href='/equipos'>Equipos</a>
-        </li>
-        <li>
-          <a href='/calendario'>Calendario</a>
-        </li>
-        <li>
-          <a href='/estadisticas'>Estadísticas</a>
-        </li>
-        <li>
-          <a href='/contacto'>Contacto</a>
-        </li>
-        <li>
-          <a href='/reglamento'>Reglamento</a>
-        </li>
+        {
+          menu.map(({ name, href }) => (
+            <li>
+              <a
+                class={`transition ${
+                  Astro.url.pathname === href ? 'opacity-100 underline pointer-events-none' : ''
+                }`}
+                href={href}
+              >
+                {name}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
   </div>
