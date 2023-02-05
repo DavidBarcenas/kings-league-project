@@ -589,7 +589,7 @@
         },
         "wins": 4,
         "loses": 1,
-        "goalsScored": 7,
+        "goalsScored": 10,
         "goalsConceded": 6,
         "yellowCards": 6,
         "redCards": 0
@@ -786,9 +786,9 @@
             }
         },
         "wins": 3,
-        "loses": -4,
+        "loses": 2,
         "goalsScored": 15,
-        "goalsConceded": 7,
+        "goalsConceded": 12,
         "yellowCards": 1,
         "redCards": 0
     },
@@ -991,7 +991,7 @@
             }
         },
         "wins": 3,
-        "loses": -1,
+        "loses": 2,
         "goalsScored": 16,
         "goalsConceded": 15,
         "yellowCards": 1,
@@ -1600,408 +1600,6 @@
     },
     {
         "team": {
-            "color": "#fff68d",
-            "id": "pio-fc",
-            "name": "PIO FC",
-            "image": "https://kings-league-api.daveeb.workers.dev/static/logos/pio.svg",
-            "imageWhite": "https://kings-league-api.daveeb.workers.dev/static/logos/pio-inverse.svg",
-            "url": "https://kingsleague.pro/team/pio-fc/",
-            "channel": "https://twitch.tv/rivers_gg",
-            "socialNetworks": [
-                "https://www.twitch.tv/rivers_gg",
-                "https://twitter.com/PIO_FC"
-            ],
-            "players": [
-                {
-                    "id": "pio-fc-4",
-                    "dorsalName": "Lopo",
-                    "fullName": "Albert Lopo",
-                    "role": "jugador 11",
-                    "image": "pio-fc-lopo.webp",
-                    "stats": {}
-                },
-                {
-                    "id": "pio-fc-1",
-                    "dorsalName": "Jorge",
-                    "fullName": "Jorge Ibáñez",
-                    "role": "Portero",
-                    "image": "pio-fc-jorge.webp",
-                    "stats": {
-                        "reflexes": 84,
-                        "saves": 83,
-                        "kickoff": 82,
-                        "stretch": 78,
-                        "score": 82
-                    }
-                },
-                {
-                    "id": "pio-fc-2",
-                    "dorsalName": "Carlitos",
-                    "fullName": "Carlos Val",
-                    "role": "Defensa",
-                    "image": "pio-fc-carlitos.webp",
-                    "stats": {
-                        "speed": 73,
-                        "physique": 64,
-                        "shooting": 77,
-                        "passing": 71,
-                        "talent": 81,
-                        "defense": 85,
-                        "score": 75
-                    }
-                },
-                {
-                    "id": "pio-fc-6",
-                    "dorsalName": "Pau Fer",
-                    "fullName": "Pau Fernández",
-                    "role": "Medio",
-                    "image": "pio-fc-pau-fer.webp",
-                    "stats": {
-                        "speed": 71,
-                        "physique": 62,
-                        "shooting": 71,
-                        "passing": 82,
-                        "talent": 75,
-                        "defense": 82,
-                        "score": 74
-                    }
-                },
-                {
-                    "id": "pio-fc-10",
-                    "dorsalName": "Carlinhos",
-                    "fullName": "Carlos García",
-                    "role": "Delantero",
-                    "image": "pio-fc-carlinhos.webp",
-                    "stats": {
-                        "speed": 71,
-                        "physique": 47,
-                        "shooting": 69,
-                        "passing": 72,
-                        "talent": 82,
-                        "defense": 68,
-                        "score": 68
-                    }
-                },
-                {
-                    "id": "pio-fc-21",
-                    "dorsalName": "B. Juárez",
-                    "fullName": "Bernat Juárez",
-                    "role": "Medio",
-                    "image": "pio-fc-b-juarez.webp",
-                    "stats": {
-                        "speed": 71,
-                        "physique": 65,
-                        "shooting": 75,
-                        "passing": 55,
-                        "talent": 71,
-                        "defense": 77,
-                        "score": 69
-                    }
-                },
-                {
-                    "id": "pio-fc-42",
-                    "dorsalName": "Turner",
-                    "fullName": "Andrew Turner",
-                    "role": "Defensa",
-                    "image": "pio-fc-turner.webp",
-                    "stats": {
-                        "speed": 73,
-                        "physique": 59,
-                        "shooting": 72,
-                        "passing": 77,
-                        "talent": 80,
-                        "defense": 80,
-                        "score": 74
-                    }
-                },
-                {
-                    "id": "pio-fc-11",
-                    "dorsalName": "Adri",
-                    "fullName": "Adrià de Castro",
-                    "role": "Delantero",
-                    "image": "pio-fc-adri.webp",
-                    "stats": {
-                        "speed": 70,
-                        "physique": 45,
-                        "shooting": 80,
-                        "passing": 89,
-                        "talent": 82,
-                        "defense": 81,
-                        "score": 75
-                    }
-                },
-                {
-                    "id": "pio-fc-8",
-                    "dorsalName": "Cokita",
-                    "fullName": "Iván López",
-                    "role": "Medio",
-                    "image": "pio-fc-cokita.webp",
-                    "stats": {
-                        "speed": 67,
-                        "physique": 47,
-                        "shooting": 79,
-                        "passing": 75,
-                        "talent": 80,
-                        "defense": 71,
-                        "score": 70
-                    }
-                },
-                {
-                    "id": "pio-fc-22",
-                    "dorsalName": "A. Ropero",
-                    "fullName": "Aaron Ropero",
-                    "role": "Medio",
-                    "image": "pio-fc-a-ropero.webp",
-                    "stats": {
-                        "speed": 72,
-                        "physique": 57,
-                        "shooting": 82,
-                        "passing": 72,
-                        "talent": 72,
-                        "defense": 68,
-                        "score": 71
-                    }
-                },
-                {
-                    "id": "pio-fc-14",
-                    "dorsalName": "Santiago",
-                    "fullName": "Adrià Santiago",
-                    "role": "Defensa",
-                    "image": "pio-fc-santiago.webp",
-                    "stats": {
-                        "speed": 67,
-                        "physique": 46,
-                        "shooting": 71,
-                        "passing": 74,
-                        "talent": 78,
-                        "defense": 70,
-                        "score": 68
-                    }
-                }
-            ],
-            "coach": "Gerardo Torrado",
-            "shortName": "PIO",
-            "coachInfo": {
-                "name": "Gerardo Torrado",
-                "image": "gerardo-torrado.webp"
-            },
-            "president": {
-                "id": "rivers",
-                "name": "Rivers",
-                "image": "https://kings-league-api.daveeb.workers.dev/static/presidents/rivers.png",
-                "teamId": "pio-fc"
-            }
-        },
-        "wins": 0,
-        "loses": 2,
-        "goalsScored": 9,
-        "goalsConceded": 16,
-        "yellowCards": 5,
-        "redCards": 0
-    },
-    {
-        "team": {
-            "id": "jijantes-fc",
-            "color": "#d4293d",
-            "name": "Jijantes FC",
-            "image": "https://kings-league-api.daveeb.workers.dev/static/logos/jijantes.svg",
-            "imageWhite": "https://kings-league-api.daveeb.workers.dev/static/logos/jijantes-inverse.svg",
-            "url": "https://kingsleague.pro/team/jijantes-fc/",
-            "channel": "https://twitch.tv/gerardromero",
-            "socialNetworks": [
-                "https://www.twitch.tv/gerardromero",
-                "https://www.instagram.com/jijantesfc/?hl=es",
-                "https://twitter.com/JijantesFC?s=20&t=40PQRh7lXf2HVdUs1pe-9w",
-                "https://www.tiktok.com/@jijantesfutbolclub"
-            ],
-            "players": [
-                {
-                    "id": "jijantes-fc-26",
-                    "dorsalName": "Soriano",
-                    "fullName": "Jonathan Soriano",
-                    "role": "jugador 11",
-                    "image": "jijantes-fc-soriano.webp",
-                    "stats": {}
-                },
-                {
-                    "id": "jijantes-fc-8",
-                    "dorsalName": "Alsina",
-                    "fullName": "Lluis Alsina",
-                    "role": "Medio",
-                    "image": "jijantes-fc-alsina.webp",
-                    "stats": {
-                        "speed": 93,
-                        "physique": 74,
-                        "shooting": 87,
-                        "passing": 76,
-                        "talent": 84,
-                        "defense": 73,
-                        "score": 81
-                    }
-                },
-                {
-                    "id": "jijantes-fc-1",
-                    "dorsalName": "Pol",
-                    "fullName": "Pol  Zapata",
-                    "role": "Portero",
-                    "image": "jijantes-fc-pol.webp",
-                    "stats": {
-                        "reflexes": 86,
-                        "saves": 87,
-                        "kickoff": 84,
-                        "stretch": 94,
-                        "score": 88
-                    }
-                },
-                {
-                    "id": "jijantes-fc-4",
-                    "dorsalName": "Jay",
-                    "fullName": "Jonathan Mengeli",
-                    "role": "Defensa",
-                    "image": "jijantes-fc-jay.webp",
-                    "stats": {
-                        "speed": 86,
-                        "physique": 82,
-                        "shooting": 74,
-                        "passing": 66,
-                        "talent": 76,
-                        "defense": 77,
-                        "score": 77
-                    }
-                },
-                {
-                    "id": "jijantes-fc-7",
-                    "dorsalName": "Quero",
-                    "fullName": "Juan  Quero",
-                    "role": "Medio",
-                    "image": "jijantes-fc-quero.webp",
-                    "stats": {
-                        "speed": 83,
-                        "physique": 67,
-                        "shooting": 73,
-                        "passing": 86,
-                        "talent": 83,
-                        "defense": 74,
-                        "score": 78
-                    }
-                },
-                {
-                    "id": "jijantes-fc-5",
-                    "dorsalName": "Arnau M.V",
-                    "fullName": "Arnau Martínez",
-                    "role": "Defensa",
-                    "image": "jijantes-fc-arnau-mv.webp",
-                    "stats": {
-                        "speed": 74,
-                        "physique": 62,
-                        "shooting": 81,
-                        "passing": 60,
-                        "talent": 68,
-                        "defense": 82,
-                        "score": 71
-                    }
-                },
-                {
-                    "id": "jijantes-fc-10",
-                    "dorsalName": "De la Villa",
-                    "fullName": "Roger de la Villa",
-                    "role": "Delantero",
-                    "image": "jijantes-fc-de-la-villa.webp",
-                    "stats": {
-                        "speed": 73,
-                        "physique": 61,
-                        "shooting": 81,
-                        "passing": 68,
-                        "talent": 78,
-                        "defense": 69,
-                        "score": 72
-                    }
-                },
-                {
-                    "id": "jijantes-fc-30",
-                    "dorsalName": "Maca",
-                    "fullName": "Joel Macarulla",
-                    "role": "Medio",
-                    "image": "jijantes-fc-maca.webp",
-                    "stats": {
-                        "speed": 72,
-                        "physique": 77,
-                        "shooting": 72,
-                        "passing": 72,
-                        "talent": 87,
-                        "defense": 75,
-                        "score": 76
-                    }
-                },
-                {
-                    "id": "jijantes-fc-6",
-                    "dorsalName": "Noel",
-                    "fullName": "Noel Bayarri",
-                    "role": "Defensa",
-                    "image": "jijantes-fc-noel.webp",
-                    "stats": {
-                        "speed": 72,
-                        "physique": 62,
-                        "shooting": 71,
-                        "passing": 64,
-                        "talent": 72,
-                        "defense": 68,
-                        "score": 68
-                    }
-                },
-                {
-                    "id": "jijantes-fc-31",
-                    "dorsalName": "Dorado",
-                    "fullName": "Raúl Dorado",
-                    "role": "Delantero",
-                    "image": "jijantes-fc-dorado.webp",
-                    "stats": {
-                        "speed": 72,
-                        "physique": 52,
-                        "shooting": 80,
-                        "passing": 71,
-                        "talent": 78,
-                        "defense": 58,
-                        "score": 69
-                    }
-                },
-                {
-                    "id": "jijantes-fc-25",
-                    "dorsalName": "Mario",
-                    "fullName": "Mario León",
-                    "role": "Portero",
-                    "image": "jijantes-fc-mario.webp",
-                    "stats": {
-                        "reflexes": 71,
-                        "saves": 73,
-                        "kickoff": 62,
-                        "stretch": 80,
-                        "score": 72
-                    }
-                }
-            ],
-            "coach": "Marc Carmona",
-            "shortName": "JFC",
-            "coachInfo": {
-                "name": "Marc Carmona",
-                "image": "marc-carmona.webp"
-            },
-            "president": {
-                "id": "gerard-romero",
-                "name": "Gerard Romero",
-                "image": "https://kings-league-api.daveeb.workers.dev/static/presidents/gerard-romero.png",
-                "teamId": "jijantes-fc"
-            }
-        },
-        "wins": 0,
-        "loses": 5,
-        "goalsScored": 11,
-        "goalsConceded": 19,
-        "yellowCards": 3,
-        "redCards": 0
-    },
-    {
-        "team": {
             "color": "#f6ab34",
             "id": "rayo-barcelona",
             "name": "Rayo de Barcelona",
@@ -2403,5 +2001,407 @@
         "goalsConceded": 22,
         "yellowCards": 2,
         "redCards": 1
+    },
+    {
+        "team": {
+            "color": "#fff68d",
+            "id": "pio-fc",
+            "name": "PIO FC",
+            "image": "https://kings-league-api.daveeb.workers.dev/static/logos/pio.svg",
+            "imageWhite": "https://kings-league-api.daveeb.workers.dev/static/logos/pio-inverse.svg",
+            "url": "https://kingsleague.pro/team/pio-fc/",
+            "channel": "https://twitch.tv/rivers_gg",
+            "socialNetworks": [
+                "https://www.twitch.tv/rivers_gg",
+                "https://twitter.com/PIO_FC"
+            ],
+            "players": [
+                {
+                    "id": "pio-fc-4",
+                    "dorsalName": "Lopo",
+                    "fullName": "Albert Lopo",
+                    "role": "jugador 11",
+                    "image": "pio-fc-lopo.webp",
+                    "stats": {}
+                },
+                {
+                    "id": "pio-fc-1",
+                    "dorsalName": "Jorge",
+                    "fullName": "Jorge Ibáñez",
+                    "role": "Portero",
+                    "image": "pio-fc-jorge.webp",
+                    "stats": {
+                        "reflexes": 84,
+                        "saves": 83,
+                        "kickoff": 82,
+                        "stretch": 78,
+                        "score": 82
+                    }
+                },
+                {
+                    "id": "pio-fc-2",
+                    "dorsalName": "Carlitos",
+                    "fullName": "Carlos Val",
+                    "role": "Defensa",
+                    "image": "pio-fc-carlitos.webp",
+                    "stats": {
+                        "speed": 73,
+                        "physique": 64,
+                        "shooting": 77,
+                        "passing": 71,
+                        "talent": 81,
+                        "defense": 85,
+                        "score": 75
+                    }
+                },
+                {
+                    "id": "pio-fc-6",
+                    "dorsalName": "Pau Fer",
+                    "fullName": "Pau Fernández",
+                    "role": "Medio",
+                    "image": "pio-fc-pau-fer.webp",
+                    "stats": {
+                        "speed": 71,
+                        "physique": 62,
+                        "shooting": 71,
+                        "passing": 82,
+                        "talent": 75,
+                        "defense": 82,
+                        "score": 74
+                    }
+                },
+                {
+                    "id": "pio-fc-10",
+                    "dorsalName": "Carlinhos",
+                    "fullName": "Carlos García",
+                    "role": "Delantero",
+                    "image": "pio-fc-carlinhos.webp",
+                    "stats": {
+                        "speed": 71,
+                        "physique": 47,
+                        "shooting": 69,
+                        "passing": 72,
+                        "talent": 82,
+                        "defense": 68,
+                        "score": 68
+                    }
+                },
+                {
+                    "id": "pio-fc-21",
+                    "dorsalName": "B. Juárez",
+                    "fullName": "Bernat Juárez",
+                    "role": "Medio",
+                    "image": "pio-fc-b-juarez.webp",
+                    "stats": {
+                        "speed": 71,
+                        "physique": 65,
+                        "shooting": 75,
+                        "passing": 55,
+                        "talent": 71,
+                        "defense": 77,
+                        "score": 69
+                    }
+                },
+                {
+                    "id": "pio-fc-42",
+                    "dorsalName": "Turner",
+                    "fullName": "Andrew Turner",
+                    "role": "Defensa",
+                    "image": "pio-fc-turner.webp",
+                    "stats": {
+                        "speed": 73,
+                        "physique": 59,
+                        "shooting": 72,
+                        "passing": 77,
+                        "talent": 80,
+                        "defense": 80,
+                        "score": 74
+                    }
+                },
+                {
+                    "id": "pio-fc-11",
+                    "dorsalName": "Adri",
+                    "fullName": "Adrià de Castro",
+                    "role": "Delantero",
+                    "image": "pio-fc-adri.webp",
+                    "stats": {
+                        "speed": 70,
+                        "physique": 45,
+                        "shooting": 80,
+                        "passing": 89,
+                        "talent": 82,
+                        "defense": 81,
+                        "score": 75
+                    }
+                },
+                {
+                    "id": "pio-fc-8",
+                    "dorsalName": "Cokita",
+                    "fullName": "Iván López",
+                    "role": "Medio",
+                    "image": "pio-fc-cokita.webp",
+                    "stats": {
+                        "speed": 67,
+                        "physique": 47,
+                        "shooting": 79,
+                        "passing": 75,
+                        "talent": 80,
+                        "defense": 71,
+                        "score": 70
+                    }
+                },
+                {
+                    "id": "pio-fc-22",
+                    "dorsalName": "A. Ropero",
+                    "fullName": "Aaron Ropero",
+                    "role": "Medio",
+                    "image": "pio-fc-a-ropero.webp",
+                    "stats": {
+                        "speed": 72,
+                        "physique": 57,
+                        "shooting": 82,
+                        "passing": 72,
+                        "talent": 72,
+                        "defense": 68,
+                        "score": 71
+                    }
+                },
+                {
+                    "id": "pio-fc-14",
+                    "dorsalName": "Santiago",
+                    "fullName": "Adrià Santiago",
+                    "role": "Defensa",
+                    "image": "pio-fc-santiago.webp",
+                    "stats": {
+                        "speed": 67,
+                        "physique": 46,
+                        "shooting": 71,
+                        "passing": 74,
+                        "talent": 78,
+                        "defense": 70,
+                        "score": 68
+                    }
+                }
+            ],
+            "coach": "Gerardo Torrado",
+            "shortName": "PIO",
+            "coachInfo": {
+                "name": "Gerardo Torrado",
+                "image": "gerardo-torrado.webp"
+            },
+            "president": {
+                "id": "rivers",
+                "name": "Rivers",
+                "image": "https://kings-league-api.daveeb.workers.dev/static/presidents/rivers.png",
+                "teamId": "pio-fc"
+            }
+        },
+        "wins": 0,
+        "loses": 5,
+        "goalsScored": 9,
+        "goalsConceded": 16,
+        "yellowCards": 5,
+        "redCards": 0
+    },
+    {
+        "team": {
+            "id": "jijantes-fc",
+            "color": "#d4293d",
+            "name": "Jijantes FC",
+            "image": "https://kings-league-api.daveeb.workers.dev/static/logos/jijantes.svg",
+            "imageWhite": "https://kings-league-api.daveeb.workers.dev/static/logos/jijantes-inverse.svg",
+            "url": "https://kingsleague.pro/team/jijantes-fc/",
+            "channel": "https://twitch.tv/gerardromero",
+            "socialNetworks": [
+                "https://www.twitch.tv/gerardromero",
+                "https://www.instagram.com/jijantesfc/?hl=es",
+                "https://twitter.com/JijantesFC?s=20&t=40PQRh7lXf2HVdUs1pe-9w",
+                "https://www.tiktok.com/@jijantesfutbolclub"
+            ],
+            "players": [
+                {
+                    "id": "jijantes-fc-26",
+                    "dorsalName": "Soriano",
+                    "fullName": "Jonathan Soriano",
+                    "role": "jugador 11",
+                    "image": "jijantes-fc-soriano.webp",
+                    "stats": {}
+                },
+                {
+                    "id": "jijantes-fc-8",
+                    "dorsalName": "Alsina",
+                    "fullName": "Lluis Alsina",
+                    "role": "Medio",
+                    "image": "jijantes-fc-alsina.webp",
+                    "stats": {
+                        "speed": 93,
+                        "physique": 74,
+                        "shooting": 87,
+                        "passing": 76,
+                        "talent": 84,
+                        "defense": 73,
+                        "score": 81
+                    }
+                },
+                {
+                    "id": "jijantes-fc-1",
+                    "dorsalName": "Pol",
+                    "fullName": "Pol  Zapata",
+                    "role": "Portero",
+                    "image": "jijantes-fc-pol.webp",
+                    "stats": {
+                        "reflexes": 86,
+                        "saves": 87,
+                        "kickoff": 84,
+                        "stretch": 94,
+                        "score": 88
+                    }
+                },
+                {
+                    "id": "jijantes-fc-4",
+                    "dorsalName": "Jay",
+                    "fullName": "Jonathan Mengeli",
+                    "role": "Defensa",
+                    "image": "jijantes-fc-jay.webp",
+                    "stats": {
+                        "speed": 86,
+                        "physique": 82,
+                        "shooting": 74,
+                        "passing": 66,
+                        "talent": 76,
+                        "defense": 77,
+                        "score": 77
+                    }
+                },
+                {
+                    "id": "jijantes-fc-7",
+                    "dorsalName": "Quero",
+                    "fullName": "Juan  Quero",
+                    "role": "Medio",
+                    "image": "jijantes-fc-quero.webp",
+                    "stats": {
+                        "speed": 83,
+                        "physique": 67,
+                        "shooting": 73,
+                        "passing": 86,
+                        "talent": 83,
+                        "defense": 74,
+                        "score": 78
+                    }
+                },
+                {
+                    "id": "jijantes-fc-5",
+                    "dorsalName": "Arnau M.V",
+                    "fullName": "Arnau Martínez",
+                    "role": "Defensa",
+                    "image": "jijantes-fc-arnau-mv.webp",
+                    "stats": {
+                        "speed": 74,
+                        "physique": 62,
+                        "shooting": 81,
+                        "passing": 60,
+                        "talent": 68,
+                        "defense": 82,
+                        "score": 71
+                    }
+                },
+                {
+                    "id": "jijantes-fc-10",
+                    "dorsalName": "De la Villa",
+                    "fullName": "Roger de la Villa",
+                    "role": "Delantero",
+                    "image": "jijantes-fc-de-la-villa.webp",
+                    "stats": {
+                        "speed": 73,
+                        "physique": 61,
+                        "shooting": 81,
+                        "passing": 68,
+                        "talent": 78,
+                        "defense": 69,
+                        "score": 72
+                    }
+                },
+                {
+                    "id": "jijantes-fc-30",
+                    "dorsalName": "Maca",
+                    "fullName": "Joel Macarulla",
+                    "role": "Medio",
+                    "image": "jijantes-fc-maca.webp",
+                    "stats": {
+                        "speed": 72,
+                        "physique": 77,
+                        "shooting": 72,
+                        "passing": 72,
+                        "talent": 87,
+                        "defense": 75,
+                        "score": 76
+                    }
+                },
+                {
+                    "id": "jijantes-fc-6",
+                    "dorsalName": "Noel",
+                    "fullName": "Noel Bayarri",
+                    "role": "Defensa",
+                    "image": "jijantes-fc-noel.webp",
+                    "stats": {
+                        "speed": 72,
+                        "physique": 62,
+                        "shooting": 71,
+                        "passing": 64,
+                        "talent": 72,
+                        "defense": 68,
+                        "score": 68
+                    }
+                },
+                {
+                    "id": "jijantes-fc-31",
+                    "dorsalName": "Dorado",
+                    "fullName": "Raúl Dorado",
+                    "role": "Delantero",
+                    "image": "jijantes-fc-dorado.webp",
+                    "stats": {
+                        "speed": 72,
+                        "physique": 52,
+                        "shooting": 80,
+                        "passing": 71,
+                        "talent": 78,
+                        "defense": 58,
+                        "score": 69
+                    }
+                },
+                {
+                    "id": "jijantes-fc-25",
+                    "dorsalName": "Mario",
+                    "fullName": "Mario León",
+                    "role": "Portero",
+                    "image": "jijantes-fc-mario.webp",
+                    "stats": {
+                        "reflexes": 71,
+                        "saves": 73,
+                        "kickoff": 62,
+                        "stretch": 80,
+                        "score": 72
+                    }
+                }
+            ],
+            "coach": "Marc Carmona",
+            "shortName": "JFC",
+            "coachInfo": {
+                "name": "Marc Carmona",
+                "image": "marc-carmona.webp"
+            },
+            "president": {
+                "id": "gerard-romero",
+                "name": "Gerard Romero",
+                "image": "https://kings-league-api.daveeb.workers.dev/static/presidents/gerard-romero.png",
+                "teamId": "jijantes-fc"
+            }
+        },
+        "wins": 0,
+        "loses": 5,
+        "goalsScored": 11,
+        "goalsConceded": 19,
+        "yellowCards": 3,
+        "redCards": 0
     }
 ]
