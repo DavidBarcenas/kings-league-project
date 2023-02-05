@@ -44,6 +44,15 @@ app.get('/teams/:id', (c) => {
 
   return team ? c.json(team) : c.json({ message: 'Team not found' }, 404)
 })
+
+app.get('/leaderboard/:teamId', (ctx) => {
+  const teamId = ctx.req.param('teamId')
+  console.log('el id', leaderboard)
+  const foundTeam = leaderboard.find(({ team }) => team.id === teamId)
+  console.log('el team', foundTeam)
+
+  return foundTeam ? ctx.json(foundTeam) : ctx.json({ message: 'Team not found' }, 404)
+})
 app.get('/static/*', serveStatic({ root: './' }))
 app.notFound((c) => {
   const { pathname } = new URL(c.req.url)
