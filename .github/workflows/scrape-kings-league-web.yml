@@ -26,6 +26,5 @@ jobs:
           npm run scrape
           git config --global user.email "davidbarcenasmx@gmail.com"
           git config --global user.name "David Barcenas"
-          git add -A
-          git commit -m "update leaderboard database"
+          git diff --quiet && git diff --staged --quiet || git commit -am "update leaderboard database"
           git push origin main
