@@ -8,6 +8,7 @@ const teams = await getAllTeams()
   {
     teams.map((team) => {
       const { id, name, imageWhite, color } = team
+      const gradient = `bg-${team.id}`
       return (
         <article
           class='rounded aspect-video bg-gradient-to-tr from-gray-600 to-gray-900 overflow-hidden'
