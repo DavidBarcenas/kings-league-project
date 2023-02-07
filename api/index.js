@@ -176,8 +176,6 @@ app.get('/teams/:id/players-12', (ctx) => {
 
 app.get('/players-12', (ctx) => ctx.json(playersTwelve))
 
-app.get('/static/*', serveStatic({ root: './' }))
-
 app.notFound((c) => {
   const { pathname } = new URL(c.req.url)
 
