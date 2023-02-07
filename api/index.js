@@ -3,57 +3,181 @@ import { serveStatic } from 'hono/serve-static.module'
 import leaderboard from '../db/leaderboard.json'
 import teams from '../db/teams.json'
 import presidents from '../db/presidents.json'
-import topScorer from '../db/top_scorer.json'
 import mvp from '../db/mvp.json'
-import assists from '../db/assists.json'
 
 const app = new Hono()
 
-app.get('/', (c) =>
-  c.json([
+app.get('/', (ctx) =>
+  ctx.json([
     {
       endpoint: '/leaderboard',
-      description: 'Returns the leaderboard'
+      description: 'Returns the Kings League leaderboard',
+      parameters: [
+        {
+          name: 'team',
+          endpoint: '/leaderboard/:teamId',
+          description: 'Return the Kings League leaderboard information for a team by his id'
+        }
+      ]
     },
     {
       endpoint: '/teams',
-      description: 'Returns the teams'
+      description: 'Returns all Kings League teams',
+      parameters: [
+        {
+          name: 'id',
+          endpoint: '/teams/:id',
+          description: 'Return a Kings League team by his id'
+        },
+        {
+          name: 'player-12',
+          endpoint: '/teams/:id/players-12',
+          description: 'Return the Kings League players 12 for the choosed team'
+        }
+      ]
     },
     {
       endpoint: '/presidents',
-      description: 'Returns the presidents'
+      description: 'Returns all Kings League presidents',
+      parameters: [
+        {
+          name: 'id',
+          endpoint: '/presidents/:id',
+          description: 'Return a Kings League president by his id'
+        }
+      ]
+    },
+    {
+      endpoint: '/coaches',
+      description: 'Returns all Kings League coaches',
+      parameters: [
+        {
+          name: 'teamId',
+          endpoint: '/coaches/:teamId',
+          description: 'Return a Kings League coach by his team id'
+        }
+      ]
+    },
+    {
+      endpoint: '/top-statistics',
+      description: 'Returns the top statistics of the Kings League'
+    },
+    {
+      endpoint: '/top-assists',
+      description: 'Returns all Kings League Top Assists',
+      parameters: [
+        {
+          name: 'rank',
+          endpoint: '/top-assists/:rank',
+          description: 'Return a Kings League top assister by his rank'
+        }
+      ]
+    },
+    {
+      endpoint: '/top-scorers',
+      description: 'Returns all Kings League Top Scorers',
+      parameters: [
+        {
+          name: 'rank',
+          endpoint: '/top-scorers/:rank',
+          description: 'Return a Kings League top scorer by his rank'
+        }
+      ]
+    },
+    {
+      endpoint: '/mvp',
+      description: 'Returns all Kings League Most Valuable Players'
+    },
+    {
+      endpoint: '/schedule',
+      description:
+        'Returns the schedule of all Kings League matches and the final score of each match played'
+    },
+    {
+      endpoint: '/players-12',
+      description: 'Returns all Kings League Players Twelve'
     }
   ])
 )
 
-app.get('/leaderboard', (c) => c.json(leaderboard))
-app.get('/teams', (c) => c.json(teams))
-app.get('/top-scorer', (c) => c.json(topScorer))
-app.get('/mvp', (c) => c.json(mvp))
-app.get('/assists', (c) => c.json(assists))
-app.get('/presidents', (c) => c.json(presidents))
-app.get('/presidents/:id', (c) => {
-  const id = c.req.param('id')
-  const president = presidents.find((president) => president.id === id)
-
-  return president ? c.json(president) : c.json({ message: 'President not found' }, 404)
-})
-app.get('/teams/:id', (c) => {
-  const id = c.req.param('id')
-  const team = teams.find((team) => team.id === id)
-
-  return team ? c.json(team) : c.json({ message: 'Team not found' }, 404)
-})
+app.get('/leaderboard', (ctx) => ctx.json(leaderboard))
 
 app.get('/leaderboard/:teamId', (ctx) => {
   const teamId = ctx.req.param('teamId')
-  console.log('el id', leaderboard)
-  const foundTeam = leaderboard.find(({ team }) => team.id === teamId)
-  console.log('el team', foundTeam)
+  const foundTeam = leaderboard.find((stats) => stats.team.id === teamId)
 
   return foundTeam ? ctx.json(foundTeam) : ctx.json({ message: 'Team not found' }, 404)
 })
+
+app.get('/teams', (ctx) => ctx.json(teams))
+
+app.get('/presidents', (ctx) => ctx.json(presidents))
+
+app.get('/top-statistics', (ctx) => ctx.json(topStatistics))
+
+app.get('/top-scorers', (ctx) => ctx.json(topScorers))
+
+app.get('/top-scorers/:rank', (ctx) => {
+  const ranking = ctx.req.param('rank')
+  const foundScorer = topScorers.find((scorer) => scorer.ranking === ranking)
+
+  return foundScorer ? ctx.json(foundScorer) : ctx.json({ message: 'Top scorer not found' }, 404)
+})
+
+app.get('/top-assists', (ctx) => ctx.json(topAssists))
+
+app.get('/top-assists/:rank', (ctx) => {
+  const ranking = ctx.req.param('rank')
+  const foundAssister = topAssists.find((assister) => assister.rank === ranking)
+
+  return foundAssister
+    ? ctx.json(foundAssister)
+    : ctx.json({ message: 'Top assister not found' }, 404)
+})
+
+app.get('/mvp', (ctx) => ctx.json(mvp))
+
+app.get('/coaches', (ctx) => ctx.json(coaches))
+
+app.get('/coaches/:teamId', (ctx) => {
+  const teamId = ctx.req.param('teamId')
+  const teamName = teams.find((team) => team.id === teamId)
+  const foundedCoach = coaches.find((coach) => coach.teamName === teamName)
+
+  return foundedCoach ? ctx.json(foundedCoach) : ctx.json({ message: 'Coach not found' }, 404)
+})
+
+app.get('/presidents/:id', (ctx) => {
+  const id = ctx.req.param('id')
+  const foundPresident = presidents.find((president) => president.id === id)
+
+  return foundPresident
+    ? ctx.json(foundPresident)
+    : ctx.json({ message: 'President not found' }, 404)
+})
+
+app.get('/teams/:id', (ctx) => {
+  const id = ctx.req.param('id')
+  const foundTeam = teams.find((team) => team.id === id)
+
+  return foundTeam ? ctx.json(foundTeam) : ctx.json({ message: 'Team not found' }, 404)
+})
+
+app.get('/schedule', (ctx) => ctx.json(schedule))
+
+app.get('/teams/:id/players-12', (ctx) => {
+  const id = ctx.req.param('id')
+  const foundPlayerTwelve = playersTwelve.filter((player) => player.team.id === id)
+
+  return foundPlayerTwelve
+    ? ctx.json(foundPlayerTwelve)
+    : ctx.json({ message: `Players for team ${id} not found` }, 404)
+})
+
+app.get('/players-12', (ctx) => ctx.json(playersTwelve))
+
 app.get('/static/*', serveStatic({ root: './' }))
+
 app.notFound((c) => {
   const { pathname } = new URL(c.req.url)
 
