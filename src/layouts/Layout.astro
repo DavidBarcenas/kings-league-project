@@ -1,12 +1,15 @@
 ---
 import Footer from '@compoonents/footer.astro'
 import Header from '@compoonents/header.astro'
+import { getAllTeams } from '@services/teams'
 
 const {
   title,
   description = 'Bienvenido a la Kings League, una nueva forma de entender el fútbol'
 } = Astro.props
 const seoTitle = title ? `${title} | Kings League Infojobs` : 'Kings League Infojobs | Fútbol real'
+
+const teams = await getAllTeams()
 ---
 
 <!DOCTYPE html>
@@ -17,7 +20,45 @@ const seoTitle = title ? `${title} | Kings League Infojobs` : 'Kings League Info
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
     <title>{seoTitle}</title>
-		<meta name="description" content={description} />
+    <link rel='canonical' href={Astro.url.href} />
+    <meta name='description' content={description} />
+    <meta name='generator' content={Astro.generator} />
+    <link
+      href='/fonts/archivo.woff2'
+      rel='preload'
+      type='font/woff2'
+      as='font'
+      fetchpriority='high'
+      crossorigin
+    />
+    <link
+      href='/fonts/archivo-semibold.woff2'
+      rel='preload'
+      type='font/woff2'
+      as='font'
+      fetchpriority='high'
+      crossorigin
+    />
+    <link
+      href='/fonts/archivo-black.woff2'
+      rel='preload'
+      type='font/woff2'
+      as='font'
+      fetchpriority='high'
+      crossorigin
+    />
+    {
+      teams.map(({ image }) => (
+        <link
+          href={image}
+          rel='preload'
+          type='image/svg+xml'
+          as='image'
+          fetchpriority='high'
+          crossorigin
+        />
+      ))
+    }
   </head>
   <body class='min-h-screen bg-orange-50/80 overflow-x-hidden'>
     <Header />

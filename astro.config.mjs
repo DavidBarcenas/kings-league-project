@@ -8,7 +8,7 @@ import sitemap from '@astrojs/sitemap'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'website-url',
+  // site: 'website-url',
   server: {
     host: true
   },
