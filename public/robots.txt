@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: 'url-prod'/sitemap-index.xml
