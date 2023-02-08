@@ -22,23 +22,26 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@astrojs/prefetch": "^0.1.2",
     "@astrojs/tailwind": "^3.0.0",
     "astro": "2.0.2",
     "cheerio": "1.0.0-rc.12",
     "hono": "2.7.5",
     "husky": "8.0.3",
     "picocolors": "^1.0.0",
-    "sharp": "^0.31.3",
     "tailwindcss": "^3.0.24"
   },
   "devDependencies": {
+    "@astrojs/sitemap": "^1.0.1",
     "@typescript-eslint/parser": "5.48.0",
     "@vitest/coverage-c8": "0.26.3",
+    "astro-critters": "^1.1.28",
     "eslint-config-standard": "17.0.0",
     "eslint-plugin-astro": "0.23.0",
     "prettier": "2.8.3",
     "prettier-plugin-astro": "0.8.0",
     "standard": "17.0.0",
+    "sharp": "^0.31.3",
     "vite": "4.0.4",
     "vitest": "0.27.3",
     "wrangler": "2.8.0"
