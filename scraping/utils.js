@@ -4,7 +4,7 @@ import { getMVP } from './mvp.js'
 import { logError, logInfo, logSuccess } from './log.js'
 import { writeDBFile } from '../db/index.js'
 import { getTopScorer } from './top_scorer.js'
-import { getAssists } from './assists.js'
+import { getAssists } from './top-assists.js'
 
 export const scrapings = {
   leaderboard: {

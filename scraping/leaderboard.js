@@ -3,9 +3,9 @@ import { presidents, teams } from '../db/index.js'
 const leaderBoardSelectors = {
   team: { selector: '.fs-table-text_3', typeOf: 'string' },
   wins: { selector: '.fs-table-text_4', typeOf: 'number' },
-  loses: { selector: '.fs-table-text_5', typeOf: 'number' },
-  goalsScored: { selector: '.fs-table-text_6', typeOf: 'number' },
-  goalsConceded: { selector: '.fs-table-text_7', typeOf: 'number' },
+  losses: { selector: '.fs-table-text_5', typeOf: 'number' },
+  scoredGoals: { selector: '.fs-table-text_6', typeOf: 'number' },
+  concededGoals: { selector: '.fs-table-text_7', typeOf: 'number' },
   yellowCards: { selector: '.fs-table-text_8', typeOf: 'number' },
   redCards: { selector: '.fs-table-text_9', typeOf: 'number' }
 }
@@ -31,7 +31,7 @@ export async function getLeaderBoard($) {
 
     const { team: teamName, ...leaderBoardTeam } = Object.fromEntries(leaderBoardEntries)
     const team = getTeam({ name: teamName })
-    leaderBoard.push({ team, ...leaderBoardTeam })
+    leaderBoard.push({ ...leaderBoardTeam, team, rank: i + 1 })
   })
 
   return leaderBoard

@@ -1,7 +1,6 @@
 import { teams } from '../db/index.js'
 
 const mvpSelectors = {
-  rank: { selector: '.fs-table-text_1', typeOf: 'number' },
   team: { selector: '.fs-table-text_3', typeOf: 'string' },
   playerName: { selector: '.fs-table-text_4', typeOf: 'string' },
   gamesPlayed: { selector: '.fs-table-text_5', typeOf: 'number' },
