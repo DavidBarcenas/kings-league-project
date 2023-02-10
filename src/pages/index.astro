@@ -1,10 +1,20 @@
 ---
 import Container from '@compoonents/container.astro'
 import Leaderboard from '@compoonents/leaderboard.astro'
+import Live from '@compoonents/live.astro'
 import NextMatchesTable from '@compoonents/next-matches-table.astro'
+import PlayerPrizeCard from '@compoonents/player-prize-card.astro'
 import Sponsors from '@compoonents/sponsors.astro'
 import TeamCard from '@compoonents/team-card.astro'
 import Layout from '@layouts/Layout.astro'
+import { getFirstPlayersStatistics } from '@services/statistics'
+import { checkIsLive } from '@services/twitch'
+
+const { hostname } = new URL(Astro.request.url)
+const isLive = await checkIsLive()
+const { mvp, topScorer, topAssister } = await getFirstPlayersStatistics()
+
+console.log(mvp)
 ---
 
 <Layout title='Kings League Infojobs'>
@@ -16,20 +26,25 @@ import Layout from '@layouts/Layout.astro'
             <NextMatchesTable />
             <Leaderboard />
           </div>
-          <div class='col-span-2'>
+          <div class='col-span-4 lg:col-span-4 xl:col-span-5 mt-[20px] lg:mt-0'>
             <div class='grid grid-cols-6 gap-y-10 gap-x-5 w-full'>
-              <!-- MVP -->
-              <div class='col-span-6 bg-white h-80 rounded'>
-                <!-- Card component here -->
-              </div>
-              <!-- Goal Scorer -->
-              <div class='col-span-3 bg-white h-80 rounded-'>
-                <!-- Card component here -->
-              </div>
-              <!-- Assistant -->
-              <div class='col-span-3 bg-white h-80 rounded'>
-                <!-- Card component here -->
-              </div>
+              {isLive && <Live hostname={hostname} />}
+
+              {
+                mvp && (
+                  <div class='col-span-6'>
+                    <PlayerPrizeCard
+                      teamName={mvp.team}
+                      teamId={mvp.teamId}
+                      teamImage={mvp.image}
+                      playerName={mvp.playerName}
+                      playerImage={mvp.playerImage}
+                      title='MVP'
+                      subtitle='Jornada 1'
+                    />
+                  </div>
+                )
+              }
             </div>
             <div class='my-5'>
               <TeamCard />
