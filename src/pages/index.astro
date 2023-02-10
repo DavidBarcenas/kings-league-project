@@ -1,8 +1,8 @@
 ---
 import Container from '@compoonents/container.astro'
+import Leaderboard from '@compoonents/leaderboard.astro'
 import NextMatchesTable from '@compoonents/next-matches-table.astro'
 import Sponsors from '@compoonents/sponsors.astro'
-import Table from '@compoonents/table.astro'
 import TeamCard from '@compoonents/team-card.astro'
 import Layout from '@layouts/Layout.astro'
 ---
@@ -14,7 +14,7 @@ import Layout from '@layouts/Layout.astro'
         <div class='grid grid-cols-4 lg:grid-cols-8 gap-10 w-full px-4 md:px-8'>
           <div class='col-span-4 xl:col-span-3 flex flex-col gap-y-10'>
             <NextMatchesTable />
-            <Table />
+            <Leaderboard />
           </div>
           <div class='col-span-2'>
             <div class='grid grid-cols-6 gap-y-10 gap-x-5 w-full'>
