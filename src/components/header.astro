@@ -1,9 +1,8 @@
 ---
+import { getAllTeams } from '@services/teams'
 import MenuIcon from './icons/menu.astro'
 import Logo from './logo.astro'
 import SocialNetworks from './social-networks.astro'
-const response = await fetch('https://kings-league-api.daveeb.workers.dev/teams')
-const teams = await response.json()
 
 const menu = [
   {
@@ -27,6 +26,8 @@ const menu = [
     href: '/reglamento'
   }
 ]
+
+const teams = await getAllTeams()
 ---
 
 <header
