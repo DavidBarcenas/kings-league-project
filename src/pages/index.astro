@@ -45,9 +45,35 @@ console.log(mvp)
                   </div>
                 )
               }
+
+              <div class='col-span-6 xl:col-span-3'>
+                <PlayerPrizeCard
+                  smallerBox
+                  teamName={topScorer.team}
+                  teamId={topScorer.teamId}
+                  teamImage={topScorer.image}
+                  playerName={topScorer.playerName}
+                  playerImage={topScorer.playerImage}
+                  title={topScorer.goals}
+                  subtitle='Goles'
+                />
+              </div>
+
+              <div class='col-span-6 xl:col-span-3'>
+                <PlayerPrizeCard
+                  smallerBox
+                  teamName={topAssister.team}
+                  teamImage={topAssister.image}
+                  teamId={topAssister.teamId}
+                  playerName={topAssister.playerName}
+                  playerImage={topAssister.playerImage}
+                  title={topAssister.assists}
+                  subtitle='Asistencias'
+                />
+              </div>
             </div>
             <div class='my-5'>
-              <TeamCard />
+              <TeamCard small />
             </div>
           </div>
         </div>
