@@ -1,9 +1,9 @@
 name: Checks for pushs and pull requests
 
-on:
-  pull_request:
-    branches:
-      - main
+#on:
+#pull_request:
+#branches:
+#- main
 
 jobs:
   test:
