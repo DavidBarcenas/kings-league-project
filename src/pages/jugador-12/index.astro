@@ -1,0 +1,23 @@
+---
+import CardPlayersTwelve from '@compoonents/card-players-twelve.astro'
+import Container from '@compoonents/container.astro'
+import FloatingBoxContainer from '@compoonents/floating-box-container.astro'
+import SectionTitle from '@compoonents/section-title.astro'
+import Layout from '@layouts/Layout.astro'
+---
+
+<Layout title='Jugador 12'>
+  <SectionTitle title='Jugador 12' />
+
+  <Container>
+    <FloatingBoxContainer>
+      <section class='mt-5 mb-20 w-9/12 mx-auto'>
+        <p class='text-center text-black font-body text-2xl'>
+          Los equipos de la <strong>Kings League InfoJobs</strong> tienen la posibilidad de invitar a
+          un jugador cada jornada. Este es el histórico de todos los Jugadores 12.
+        </p>
+      </section>
+      <CardPlayersTwelve />
+    </FloatingBoxContainer>
+  </Container>
+</Layout>
