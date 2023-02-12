@@ -53,9 +53,9 @@ const teams = await getAllTeams()
                   <li>
                     <a
                       class='group transition hidden md:block'
-                      href={`/team/${id}`}
+                      href={`/equipos/${id}`}
                       title={name}
-                      rel={Astro.url.pathname !== `/team/${id}` && 'preload'}
+                      rel={Astro.url.pathname !== `/equipos/${id}` && 'preload'}
                     >
                       <img
                         class='h-9 w-9 lg:h-12 lg:w-12 aspect-square'
