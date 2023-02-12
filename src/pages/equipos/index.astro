@@ -1,5 +1,6 @@
 ---
 import Container from '@compoonents/container.astro'
+import FloatingBoxContainer from '@compoonents/floating-box-container.astro'
 import SectionTitle from '@compoonents/section-title.astro'
 import TeamCard from '@compoonents/team-card.astro'
 import Layout from '@layouts/Layout.astro'
@@ -8,8 +9,8 @@ import Layout from '@layouts/Layout.astro'
 <Layout title='Equipos'>
   <SectionTitle title='Equipos' />
   <Container>
-    <div class="bg-white p-20 shadow-xl rounded -mt-10 mb-40">
+    <FloatingBoxContainer>
       <TeamCard />
-    </div>
+    </FloatingBoxContainer>
   </Container>
 </Layout>
